@@ -41,9 +41,8 @@
       <div class="col-12 text-center pt-2 pb-2" style="font-family: 'Arial Narrow'">CLIENTS</div>
       <div class="col-12">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">ABC Infotech Ltd.</li>
-          <li class="list-group-item">DEF Software Solutions</li>
-          <li class="list-group-item">GHI Industries</li>
+          <li class="list-group-item" *ngFor="let client of Clients">ABC Infotech Ltd.</li>
+
         </ul>
       </div>
     </div>

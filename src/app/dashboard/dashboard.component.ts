@@ -33,6 +33,10 @@ export class DashboardComponent implements OnInit {
     this.ProjectCost=2113507;
     this.CurrentExpenditure=96788;
     this.AvailableFunds=52536;
+
+    this.Clients=[
+      "ABC Infotech Ltd","DEF Software Solutions","GHI Industries"
+    ];
   }
 
 }
