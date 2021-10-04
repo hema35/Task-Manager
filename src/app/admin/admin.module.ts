@@ -6,15 +6,19 @@ import { AboutComponent } from '../admin/about/about.component';
 import { DashboardService } from '../dashboard.service';
 import { ProjectsComponent } from './projects/projects.component';
 import { FormsModule } from '@angular/forms';
-
-
+import { TeamSizeValidatorDirective } from '../team-size-validator.directive';
+import { ClientLocationStatusValidatorDirective } from '../client-location-status-validator.directive';
+import { ProjectIDUniqueValidatorDirective } from '../project-idunique-validator.directive';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     MyProfileComponent,
     AboutComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    TeamSizeValidatorDirective,
+    ClientLocationStatusValidatorDirective,
+    ProjectIDUniqueValidatorDirective,
   ],
   imports: [
     CommonModule,
@@ -24,7 +28,11 @@ import { FormsModule } from '@angular/forms';
     DashboardComponent,
     MyProfileComponent,
     AboutComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    TeamSizeValidatorDirective,
+    ClientLocationStatusValidatorDirective,
+    ProjectIDUniqueValidatorDirective,
+
   ],
   providers:[DashboardService]
 })
