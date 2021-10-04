@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormControl,  FormGroup } from '@angular/forms';
 import { CountriesService } from '../countries.service';
 import { Country } from '../country';
 import { CommonModule  } from '@angular/common';
@@ -15,13 +15,17 @@ export class SignUpComponent implements OnInit {
    countries: Country[]=[];
   constructor(private countriesService: CountriesService) {
     this.signUpForm = new FormGroup({
-      firstName:new FormControl(null),
-      lastName:new FormControl(null),
-      email:new FormControl(null),
-      mobile:new FormControl(null),
-      dateOfBirth:new FormControl(null),
-      countryID:new FormControl(null),
-      receiveNewsLetters:new FormControl(null)
+      personName: new FormGroup({
+      firstName: new FormControl(null),
+      lastName: new FormControl(null),
+    }),
+      email: new FormControl(null),
+      mobile: new FormControl(null),
+      dateOfBirth: new FormControl(null),
+      countryID: new FormControl(null),
+      gender: new FormControl(null),
+      receiveNewsLetters: new FormControl(null),
+      skills: new FormArray([]),
     });
    }
 
@@ -30,6 +34,22 @@ export class SignUpComponent implements OnInit {
 this.signUpForm.valueChanges.subscribe((value)=>{
   console.log(value);
 })
+  }
+  onSubmitClick(){
+    console.log(this.signUpForm.value);
+  }
+
+  onAddSkill(){
+    var formGroup = new FormGroup({
+      skillName: new FormControl(null),
+      level: new FormControl(null)
+    });
+    (<FormArray>this.signUpForm.get("skills")).push(formGroup);
+  }
+
+  onRemoveClick(){
+
+    (<FormArray>this.signUpForm.get("skills")).removeAt(index);
   }
 
 }
