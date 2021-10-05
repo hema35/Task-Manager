@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { Project } from 'src/app/project';
 import { EventEmitter } from '@angular/core';
+import { ProjectsService } from 'src/app/projects.service';
 
 @Component({
   selector: 'app-project',
@@ -20,7 +21,10 @@ export class ProjectComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.projectsService.MyObservable.subscribe((hide)=>{
+      this.hideDetails = hide;
+    });
   }
 
   onEditClick(event: any,i: number){
