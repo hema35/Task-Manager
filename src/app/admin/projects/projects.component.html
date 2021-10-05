@@ -17,6 +17,8 @@
         >
           Create Project
         </button>
+
+        <button class="btn btn-secondary" (click)= "onHideShowDetails($event)">Hide/Show Details</button>
       </div>
       <label for="drpSearchBy" class="col-form-label col-2 text-right"
         >Search By</label
@@ -58,7 +60,7 @@
   <div class="col-xl-12 mx-auto">
     <div class="row">
       <div class="col-md-4" *ngFor= "let project of projects; let i= index">
-        <app-project [currentProject]="project" [recordIndex]="i"></app-project>
+        <app-project #prj [currentProject]="project" [recordIndex]="i" (editClick)="onEditClick(i)" (deleteClick)="onDeleteClick(i)"></app-project>
       </div>
     </div>
 
