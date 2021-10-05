@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Country } from './country';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CountriesService {
+export class CountriesService
+{
+  urlPrefix: string = "http://localhost:9090"; //make this as empty ("") if you are using asp.net core [without CORS]
 
-  constructor() { }
+  constructor(private httpClient: HttpClient)
+  {
+  }
 
-  getCountries(){
-    return[
-      new Country(1, "India"),
-      new Country(2, "UK"),
-      new Country(3, "USA"),
-      new Country(4, "Japan")
-    ];
+  getCountries(): Observable<Country[]>
+  {
+    return this.httpClient.get<Country[]>(this.urlPrefix + "/api/countries", { responseType: "json" });
   }
 }

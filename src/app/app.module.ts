@@ -1,27 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AdminModule } from './admin/admin.module';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AbcComponent } from './abc/abc.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JwtInterceptorService } from './jwt-interceptor.service';
 import { JwtUnAuthorizedInterceptorService } from './jwt-un-authorized-interceptor.service';
 import { JwtModule } from '@auth0/angular-jwt';
-import { ClientLocationStatusValidatorDirective } from './client-location-status-validator.directive';
-import { ProjectIDUniqueValidatorDirective } from './project-idunique-validator.directive';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CommonModule } from '@angular/common';
+import { TasksComponent } from './tasks/tasks.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AbcComponent,
+
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    TasksComponent
   ],
   imports: [
     BrowserModule,

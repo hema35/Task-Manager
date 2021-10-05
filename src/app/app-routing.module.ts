@@ -6,6 +6,7 @@ import { ProjectsComponent } from './admin/projects/projects.component';
 import { LoginComponent } from './login/login.component';
 import { CanActivateGuardService } from './can-activate-guard.service';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { TasksComponent } from './tasks/tasks.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -24,11 +25,17 @@ const routes: Routes = [
     data: { expectedRole: 'admin' },
   },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
+  {
+    path: 'tasks',
+    component: TasksComponent,
+    canActivate: [CanActivateGuardService],
+    data: { expectedRole: 'Employee' },
+  },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { useHash: true, enableTracing: true }),
+    RouterModule.forRoot(routes, { useHash: true }),
   ],
   exports: [RouterModule],
 })
