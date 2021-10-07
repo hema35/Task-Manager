@@ -30,12 +30,12 @@ export class ProjectsService {
    getAllProjects() : Observable<Project[]>
    {
 
-     return this.httpClient.get<Project[]>("http://localhost:9090/projects",{responseType:"json"})
+     return this.httpClient.get<Project[]>("http://localhost:9090/api/projects",{responseType:"json"})
      .pipe(map(
        (data:Project[]) => {
          for(var i = 0; i<data.length; i++)
          {
-          //  data[i].teamSize = data[i].teamSize*100;
+           data[i].teamSize = data[i].teamSize*100;
          }
          return data;
        }
@@ -44,26 +44,26 @@ export class ProjectsService {
 
    getProjectByProjectID(ProjectID: number): Observable<Project>
    {
-     return this.httpClient.get<Project>("http://localhost:9090/projects"+ProjectID, { responseType: "json"});
+     return this.httpClient.get<Project>("http://localhost:9090/api/projects"+ProjectID, { responseType: "json"});
    }
 
    insertProject(newProject:Project) : Observable<Project>
   {
-    return this.httpClient.post<Project>("http://localhost:9090/projects",newProject,{responseType:"json"});
+    return this.httpClient.post<Project>("http://localhost:9090/api/projects",newProject,{responseType:"json"});
   }
 
   updateProject(existingProject:Project) : Observable<Project>
   {
-    return this.httpClient.put<Project>("http://localhost:9090/projects"+existingProject.projectID,existingProject,{responseType:"json"});
+    return this.httpClient.put<Project>("http://localhost:9090/api/projects"+existingProject.projectID,existingProject,{responseType:"json"});
   }
   deleteProject(projectID:number) : Observable<string>
   {
-    return this.httpClient.delete<string>("http://localhost:9090/projects/" + projectID);
+    return this.httpClient.delete<string>("http://localhost:9090/api/projects/" + projectID);
   }
 
   SearchProjects(searchBy:string,searchText:string) : Observable<Project[]>
    {
-     return this.httpClient.get<Project[]>("http://localhost:9090/projects/search" + searchBy + "/" + searchText, {responseType:"json"});
+     return this.httpClient.get<Project[]>("http://localhost:9090/api/projects/search" + searchBy + "/" + searchText, {responseType:"json"});
    }
 
   }

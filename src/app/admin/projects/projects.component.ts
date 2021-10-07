@@ -32,7 +32,9 @@ export class ProjectsComponent implements OnInit {
   constructor(
     private projectsService: ProjectsService,
     private clientLocationsService: ClientLocationsService
-  ) {}
+  ) {
+    this.prj = new QueryList<ProjectComponent>();
+  }
 
   ngOnInit() {
     this.projectsService.getAllProjects().subscribe((response: Project[]) => {
@@ -152,9 +154,9 @@ export class ProjectsComponent implements OnInit {
         }
       );
   }
-  @ViewChildren("prj") prj:QueryList<ProjectComponent>;
+  @ViewChildren("prj") prj: QueryList<ProjectComponent>;
 
-  onHideShowDetails(){
+  onHideShowDetails(event: any){
    this.projectsService.toggleDetails();
   }
 }

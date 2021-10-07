@@ -19,10 +19,10 @@ export class ProjectComponent implements OnInit {
 
   hideDetails: boolean = false;
 
-  constructor() { }
+  constructor(private projectsService: ProjectsService) { }
 
   ngOnInit() {
-    this.projectsService.MyObservable.subscribe((hide)=>{
+    this.projectsService.MyObservable.subscribe((hide: any)=>{
       this.hideDetails = hide;
     });
   }

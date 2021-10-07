@@ -12,7 +12,8 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CommonModule } from '@angular/common';
 import { TasksComponent } from './tasks/tasks.component';
-import { ProjectComponent } from './admin/project/project.component';
+
+
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ProjectComponent } from './admin/project/project.component';
     LoginComponent,
     SignUpComponent,
     TasksComponent,
+
 
   ],
   imports: [

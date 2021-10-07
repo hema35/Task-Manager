@@ -10,7 +10,7 @@ import { TeamSizeValidatorDirective } from '../team-size-validator.directive';
 import { ClientLocationStatusValidatorDirective } from '../client-location-status-validator.directive';
 import { ProjectIDUniqueValidatorDirective } from '../project-idunique-validator.directive';
 import { ProjectComponent } from './project/project.component';
-
+import { NumberToWordsPipe } from '../number-to-words.pipe';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -21,6 +21,7 @@ import { ProjectComponent } from './project/project.component';
     ClientLocationStatusValidatorDirective,
     ProjectIDUniqueValidatorDirective,
     ProjectComponent,
+    NumberToWordsPipe,
   ],
   imports: [
     CommonModule,

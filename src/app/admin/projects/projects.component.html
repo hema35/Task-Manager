@@ -123,7 +123,7 @@
 
             </div>
 
-            </div>
+
           </div>
 
           <div class="form-group row">
@@ -171,7 +171,7 @@
             <label for="col-sm-4 col-form-label"></label>
             <div class="col-sm-8">
               <div class="form-check">
-                <input type="checkbox" id="chkNewActive" value="true" class="form-check-input" [(ngModel)]="newProject.active">
+                <input type="checkbox" id="chkNewActive" value="true" class="form-check-input" name="Active" [(ngModel)]="newProject.active">
                 <label class="form-check-label" for="chkNewActive">Active</label>
               </div>
             </div>
@@ -185,15 +185,11 @@
               <label for="rbNewStatusInForce" class="form-check-label">In Force</label>
               </div>
               <div class="form-check form-check-inline">
-                <input type="radio" id="rbNewStatusSupport" value="Support" class="form-check-input" name="Status" [(ngModel)]="newProject.status" required="required" #newStatusSupport="ngModel">
+                <input type="radio" id="rbNewStatusSupport" value="Support" class="form-check-input" name="Support" [(ngModel)]="newProject.status" required="required" #newStatusSupport="ngModel">
 
                 <label for="rbNewStatusSupport" class="form-check-label">Support</label>              </div>
             </div>
             <span class="text-danger" *ngIf="newStatusInForce.invalid && (newStatusInForce.dirty ||newStatusInForce.touched||newForm.submitted) && newStatusInForce.errors?.required">Please select status</span>
-          </div>
-
-
-            </div>
           </div>
           <div class="form-group row">
             <label for="drpNewClientLocation" class="col-sm-4 col-form-label">Client Location</label>
@@ -209,8 +205,7 @@
               <span class="text-danger" *ngIf="newForm.invalid && (newForm.dirty ||newForm.touched||newForm.submitted)&&newForm.errors?.clientLocationStatus">Support projects are not allowed in Tokyo</span>
             </div>
           </div>
-
-
+        </div>
         <div class="modal-footer">
           <button class="btn btn-warning" data-dismiss="modal">Cancel</button>
           <button
@@ -222,8 +217,8 @@
           </button>
         </div>
       </div>
-
-
+    </div>
+    </div>
 </form>
 
 <form  #editForm="ngForm" novalidate="novalidate" appClientLocationStatusValidator>
@@ -332,7 +327,7 @@
             <label for="col-sm-4 col-form-label"></label>
             <div class="col-sm-8">
               <div class="form-check">
-                <input type="checkbox" id="chkEditActive" value="true" class="form-check-input" [(ngModel)]="editProject.active">
+                <input type="checkbox" id="chkEditActive" value="true" class="form-check-input" name="Active" [(ngModel)]="editProject.active">
                 <label class="form-check-label" for="chkEditActive">Active</label>
               </div>
             </div>
@@ -346,7 +341,7 @@
               <label for="rbEditStatusInForce" class="form-check-label">In Force</label>
               </div>
               <div class="form-check form-check-inline">
-                <input type="radio" id="rbEditStatusSupport" value="Support" class="form-check-input" name="Status" [(ngModel)]="editProject.status" required="required" #editStatusSupport="ngModel">
+                <input type="radio" id="rbEditStatusSupport" value="Support" class="form-check-input" name="Support" [(ngModel)]="editProject.status" required="required" #editStatusSupport="ngModel">
 
                 <label for="rbEditStatusSupport" class="form-check-label">Support</label>              </div>
             </div>

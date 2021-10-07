@@ -115,7 +115,7 @@ app.get("/api/validUser", function (req, res) {
   }
 });
 //POST /authenticate
-app.post("/authenticate", function (req, res) {
+app.post("/api/authenticate", function (req, res) {
   console.log(req.method, req.url);
   users = JSON.parse(fs.readFileSync(jsonfile, "utf8")).users;
   user = users.find(
