@@ -12,6 +12,8 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CommonModule } from '@angular/common';
 import { TasksComponent } from './tasks/tasks.component';
+import { PagingPipe } from './paging.pipe';
+
 
 
 
@@ -22,6 +24,8 @@ import { TasksComponent } from './tasks/tasks.component';
     LoginComponent,
     SignUpComponent,
     TasksComponent,
+    PagingPipe,
+
 
 
   ],

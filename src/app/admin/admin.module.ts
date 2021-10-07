@@ -11,6 +11,7 @@ import { ClientLocationStatusValidatorDirective } from '../client-location-statu
 import { ProjectIDUniqueValidatorDirective } from '../project-idunique-validator.directive';
 import { ProjectComponent } from './project/project.component';
 import { NumberToWordsPipe } from '../number-to-words.pipe';
+import { FilterPipe } from '../filter.pipe';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -22,6 +23,7 @@ import { NumberToWordsPipe } from '../number-to-words.pipe';
     ProjectIDUniqueValidatorDirective,
     ProjectComponent,
     NumberToWordsPipe,
+    FilterPipe,
   ],
   imports: [
     CommonModule,
